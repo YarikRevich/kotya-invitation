@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Invitation to my Birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Special+Elite&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: radial-gradient(circle, rgba(10, 10, 12, 0.4) 0%, rgba(5, 5, 6, 0.98) 100%), url('classic_noir_bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #e3e0e2;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Film Grain and Heavy Vignette for Retro Noir Vibe */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle, transparent 40%, rgba(5, 5, 6, 0.9) 100%),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .card-container {
+            background: rgba(14, 14, 16, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 30px 70px rgba(0, 0, 0, 0.95),
+                inset 0 0 40px rgba(0, 0, 0, 0.98);
+            width: 100%;
+            max-width: 480px;
+            margin: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 2px;
+            box-sizing: border-box;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Classic Double Framing */
+        .card-container::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            pointer-events: none;
+        }
+
+        /* "CLASSIFIED" Vintage Ink Stamp */
+        .stamp {
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            border: 2px solid rgb(255, 0, 0);
+            color: rgb(255, 0, 0);
+            font-family: 'Special Elite', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 4px 10px;
+            text-transform: uppercase;
+            transform: rotate(8deg);
+            letter-spacing: 2px;
+            pointer-events: none;
+            border-radius: 2px;
+            background: rgba(14, 14, 16, 0.4);
+            opacity: 0.75;
+        }
+
+        .header-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 300;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .subtitle {
+            font-family: 'Special Elite', monospace;
+            font-size: 9px;
+            color: #b5acb1;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 45px;
+            opacity: 0.75;
+        }
+
+        /* Invitation text */
+        .invitation-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            color: #e3e0e2;
+            font-weight: 300;
+        }
+
+        .love-note {
+            font-family: 'Alex Brush', cursive;
+            font-size: 38px;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            font-style: normal;
+            text-shadow: none;
+        }
+
+        .highlight {
+            color: #ffffff;
+            font-weight: 600;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
+            padding-bottom: 1px;
+        }
+
+        /* Typewriter styled details box */
+        .details-box {
+            background: rgba(10, 10, 12, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 5px;
+            margin-bottom: 35px;
+            text-align: left;
+        }
+
+        .detail-item {
+            font-family: 'Special Elite', monospace;
+            font-size: 13px;
+            margin: 12px 0;
+            color: #e3e0e2;
+            display: flex;
+            justify-content: flex-start;
+            align-items: baseline;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-label {
+            color: #b5acb1;
+            width: 120px;
+            flex-shrink: 0;
+            font-weight: normal;
+            opacity: 0.85;
+        }
+
+        .detail-item strong {
+            color: #ffffff;
+            font-weight: normal;
+        }
+
+        .footer-sig {
+            font-family: 'Special Elite', monospace;
+            font-size: 11px;
+            color: #b5acb1;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-top: 25px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-sig:hover {
+            color: #ffffff;
+            opacity: 1;
+        }
+
+        /* Tactile Typewriter styled RSVP Button */
+        .accept-btn {
+            font-family: 'Special Elite', monospace;
+            font-size: 13px;
+            color: #d1b2c4;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 24px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 2px;
+        }
+
+        .accept-btn:hover {
+            color: #ffffff;
+            border-color: #d1b2c4;
+            background: rgba(255, 255, 255, 0.03);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .accept-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Heavy Red Stamp of Acceptance */
+        .rsvp-stamp {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(3) rotate(-15deg);
+            border: 3px double #ff0000;
+            color: #ff0000;
+            font-family: 'Special Elite', monospace;
+            font-size: 32px;
+            font-weight: bold;
+            padding: 15px 30px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10;
+            background: rgba(14, 14, 16, 0.98);
+            border-radius: 4px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            mask-image: radial-gradient(circle, black 60%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .rsvp-stamp.active {
+            opacity: 0.95;
+            transform: translate(-50%, -50%) scale(1) rotate(-12deg);
+        }
+
+        /* Ink Splash Particles */
+        .ink-drop {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: splash 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+            z-index: 9;
+            opacity: 0.75;
+        }
+
+        @keyframes splash {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                transform: translate(var(--x), var(--y)) scale(0.2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="stamp">CLASSIFIED</div>
+        
+        <div class="header-title">Personal Invitation to My Exclusive Birthday Party</div>
+
+        <div class="invitation-text">
+            <div class="love-note">To my beloved Kotya</div>
+            I would like to share this day the prettiest woman in the world,
+            my light and my love.
+            <br><br>
+            I am glad to invite you to my <span class="highlight">Exclusive Birthday Party</span>. 
+            <br><br>
+            More details will be sent via private message.
+        </div>
+
+        <div class="details-box">
+            <div class="detail-item">
+                <span class="detail-label">DATE:</span> <strong>22 June 2026</strong>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">LOCATION:</span> <strong>Your Dormitory</strong>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">DRESS CODE:</span> <strong>Wear Comfortable Dark Clothing</strong>
+            </div>
+        </div>
+
+        <button class="accept-btn" onclick="acceptInvitation()">CONFIRM ATTENDANCE</button>
+        
+        <div id="success-stamp" class="rsvp-stamp">ACCEPTED</div>
+
+        <div class="footer-sig">Waiting for you, your sisulik</div>
+    </div>
+
+    <script>
+        function acceptInvitation() {
+            const btn = document.querySelector('.accept-btn');
+            const stamp = document.getElementById('success-stamp');
+            
+            btn.style.opacity = '0';
+            btn.style.pointerEvents = 'none';
+            setTimeout(() => {
+                btn.style.display = 'none';
+            }, 300);
+            
+            stamp.classList.add('active');
+            
+            createInkSplatter();
+        }
+
+        function createInkSplatter() {
+            const container = document.querySelector('.card-container');
+            const stamp = document.getElementById('success-stamp');
+            const rect = stamp.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            
+            const centerX = (rect.left + rect.width / 2) - containerRect.left;
+            const centerY = (rect.top + rect.height / 2) - containerRect.top;
+            
+            for (let i = 0; i < 25; i++) {
+                const drop = document.createElement('div');
+                drop.className = 'ink-drop';
+                
+                drop.style.left = centerX + 'px';
+                drop.style.top = centerY + 'px';
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 40 + Math.random() * 90;
+                const x = Math.cos(angle) * distance;
+                const y = Math.sin(angle) * distance;
+                
+                drop.style.setProperty('--x', `${x}px`);
+                drop.style.setProperty('--y', `${y}px`);
+                
+                const size = 3 + Math.random() * 7;
+                drop.style.width = size + 'px';
+                drop.style.height = size + 'px';
+                
+                drop.style.background = '#b83a68';
+                
+                container.appendChild(drop);
+                
+                setTimeout(() => drop.remove(), 1000);
+            }
+        }
+    </script>
+</body>
+</html>
